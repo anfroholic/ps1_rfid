@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+
+  ps1_rfid:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: ps1_rfid
+    command: uvicorn src.main:app --host 0.0.0.0 --port 80 --reload
+    volumes:
+      - .:/code
+    ports:
+      - 80:80
+    environment:
+      PYTHONUNBUFFERED: 1
+    restart: unless-stopped
+
+  

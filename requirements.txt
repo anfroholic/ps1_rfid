@@ -1,0 +1,5 @@
+fastapi
+fastapi_mqtt
+uvicorn
+jinja2
+python-multipart
